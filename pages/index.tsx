@@ -53,7 +53,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className='w-[820px]' >
+        <div className='w-[880px]' >
           <h1 className='text-center text-2xl		'>NFT Transfer ( ERC-721 )</h1>
           <hr className='my-4' />
           <label htmlFor="">Enter Transaction Hash</label>
@@ -67,7 +67,6 @@ export default function Home() {
                 <h4 className='mb-4'> To: {recept?.to}</h4>
                 {
                   recept?.logs.map((log: any, i: number) => {
-                    console.log(log);
                     if (log.topics[0] === eventTransfer) {
                       let sendAddress = utils.defaultAbiCoder.decode(['uint256'], log.topics[1])[0]._hex;
                       let receverAddress = utils.defaultAbiCoder.decode(['uint256'], log.topics[2])[0]._hex;
