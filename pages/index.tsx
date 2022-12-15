@@ -39,22 +39,10 @@ export default function Home() {
     setRecept(recept as Filter);
   }
 
-  function getData(val: object) {
+  function getData(val: any) {
     const value: string = val.target.value;
     setTxhash(value);
   }
-
-  // async function Test() {
-  //   const txRecept = await provider.getTransactionReceipt("0xd58888f66b7e838c3546680de7dd0f7c2d3e851bb0a22bf2a81c6dc40675e908");
-  //   const contAdd = txRecept.to;
-  //   const contractObject = new ethers.Contract(contAdd, contractABI, provider)
-  //   const result = await contractObject.tokenURI("767");
-
-  //   console.log("=>" + result);
-  // }
-  // Test()
-
-
 
   return (
     <div className={styles.container}>
