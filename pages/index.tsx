@@ -63,8 +63,16 @@ export default function Home() {
           {
             print ?
               <div>
-                <h4 className='my-1' >From: {recept?.from}</h4>
-                <h4 className='mb-4'> To: {recept?.to}</h4>
+                  {
+                    recept &&
+                    <div>
+                     <h4 className='my-1' >From: {recept?.from}</h4>
+                    <h4 className='mb-4'> To: {recept?.to}</h4>
+                   </div>
+                  }
+                   
+             
+              
                 {
                   recept?.logs.map((log: any, i: number) => {
                     if (log.topics[0] === eventTransfer) {
